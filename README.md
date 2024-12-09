@@ -12,3 +12,11 @@ export const getBannerAndFeatureImage = async () =>
 const res = await getBannerAndFeatureImage();
 const url = URL.createObjectURL(res.data);
 ```
+
+2. HTTP请求上传图片文件
+```
+const profileFile = new File([customAvatarInfo], "profile.png", { type: "image/png" }); // 创建文件
+const formData = new FormData();
+formData.append("file", profileFile);
+fileUpload(formData).then((res: any) => ...some logic // fileUpload是上传图片的API );
+```
